@@ -1,0 +1,29 @@
+{
+  "name": "tap",
+  "version": "1.0.0",
+  "description": "移动端使用 `tap` 替代 `click` 事件",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saberization/tap.git"
+  },
+  "author": "Aimer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Saberization/tap/issues"
+  },
+  "homepage": "https://github.com/Saberization/tap#readme"
+}
