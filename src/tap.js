@@ -9,8 +9,13 @@
 
     // 先缓存原先的 addEventListener
     const _addEventListener = HTMLElement.prototype.addEventListener;
+    const env = navigator.userAgent.includes('Mobile') ? 'Mobile' : 'Browser';
 
     HTMLElement.prototype.addEventListener = function (evt, callback) {
+
+        if (evt === 'tap' && env === 'Browser') {
+            evt = 'click';
+        }
 
         switch (evt) {
             case 'tap':
@@ -72,7 +77,7 @@
                 // 触发条件一：位移距离不管是纵向还是横向，均不能超过 30px
                 // moveX、moveY 为 0 的时候代表没移动，可以触发callback
                 if (moveX === 0 && moveY === 0) {
-                    callback(e);
+                    callback.call(el, e);
 
                     // 满足条件 return
                     return;
@@ -80,7 +85,7 @@
 
                 // distanceX、distanceY 位移距离不能超过30px
                 if (distanceX <= 30 || distanceY <= 30) {
-                    callback(e);
+                    callback.call(el, e);
 
                     // 满足条件 return
                     return;

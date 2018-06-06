@@ -1,6 +1,6 @@
 <!--
     @Author: guotq
-    @Date: 
+    @Date:
     @Last Modified by: guotq
     @Last Modified time: 
     @Description: 
@@ -14,9 +14,18 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="format-detection" content="telephone=no" />
-        <title></title>
+        <title>移动端模拟点击事件tap</title>
+        <script src="./dist/tap.min.js"></script>
     </head>
     <body>
+        <button id="button">Click Me</button>
 
+        <script>
+            const btnEl = document.getElementById('button');
+
+            btnEl.addEventListener('tap', function () {
+                // do somthing...
+            });
+        </script>
     </body>
 </html>
