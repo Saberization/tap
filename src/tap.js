@@ -16,8 +16,14 @@
 
     HTMLElement.prototype.addEventListener = function (evt, callback) {
 
-        if (evt === 'tap' && env === 'Browser') {
-            evt = 'click';
+        if (env === 'Browser') {
+            if (evt === 'tap') {
+                evt = 'click';
+            }
+
+            if (evt === 'doubletap') {
+                evt = 'dblclick';
+            }
         }
 
         switch (evt) {
