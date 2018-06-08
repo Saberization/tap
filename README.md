@@ -32,7 +32,13 @@
 > 与一般事件用法一致
 
 ```js
+// 单击事件
 dom.addEventListener('tap', function() {
-  // do something...    
+    // do something...    
+});
+
+// 双击事件
+dom.addEventListener('doubletap', function() {
+    // do something...
 });
 ```

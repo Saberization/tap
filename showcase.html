@@ -15,14 +15,22 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="format-detection" content="telephone=no" />
         <title>移动端模拟点击事件tap</title>
-        <script src="./dist/tap.min.js"></script>
+        <!-- <script src="./dist/tap.min.js"></script> -->
+        <script src="./src/tap.js"></script>
     </head>
     <body>
-        <button id="button">Click Me</button>
+        <button id="btntap">tap</button>
+        <button id="doubletap">doubletap</button>
 
         <script>
-            document.getElementById('button').addEventListener('tap', function () {
+            document.getElementById('btntap').addEventListener('tap', function () {
                 // do somthing...
+                console.log('tap');
+            });
+
+            document.getElementById('doubletap').addEventListener('doubletap', function() {
+                // do somthing...
+                console.log('doubletap');
             });
         </script>
     </body>
