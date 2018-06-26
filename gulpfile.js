@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const gulpBabel = require('gulp-babel');
-const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
-gulp.task('babel', function () {
+gulp.task('babel', function() {
     gulp.src('./src/tap.js')
         .pipe(gulpBabel({
             presets: ['env']
@@ -11,16 +11,14 @@ gulp.task('babel', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('uglify', function () {
-    gulp.src('./src/tap.js')
-        .pipe(gulpBabel({
-            presets: ['env']
-        }))
+gulp.task('build', function() {
+    gulp.src([
+        './libs/polyfill.min.js',
+        './dist/tap.js'
+    ])
+        .pipe(concat('tap.min.js'))
         .pipe(uglify())
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['babel', 'uglify']);
+gulp.task('default', ['babel', 'build']);
