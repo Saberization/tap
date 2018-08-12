@@ -1,7 +1,7 @@
 {
   "name": "tap",
   "version": "1.0.0",
-  "description": "移动端使用 `tap` 替代 `click` 事件",
+  "description": "移动端使用 `tap`、`doubletap` 替代 `click`、`doubleclick` 事件",
   "main": "gulpfile.js",
   "dependencies": {
     "babel-preset-env": "^1.7.0"
